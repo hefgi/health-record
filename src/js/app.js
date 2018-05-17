@@ -151,7 +151,7 @@ App = {
     App.contracts.HealthRecord.deployed().then(function(instance) {
       healthRecordInstance = instance;
 
-      return healthRecordInstance.getRecord(account);
+      return healthRecordInstance.records.call(account);
     }).then(function(result) {
       let record = new HealthRecord(result);
       search_result.html("");
